@@ -317,6 +317,121 @@
   border-radius: 10px;
   box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
 }
+
+
+
+
+
+@media only screen and (max-width: 480px) {
+.Random {
+  top: 20%;
+  bottom: 0;
+  left: 25%;
+  right: 0;
+  width: 50%;
+  height: 60%;
+  border: none;
+  outline: none !important;
+  background-color: red;
+  box-shadow: 2px 2px 16px #ccc !important;
+}
+
+.modal-top {
+  height: 70px;
+  background: var(--lightBlue);
+}
+
+.parcel-title {
+  color: var(--lightOrange);
+  text-align: center;
+  padding: 12px;
+  letter-spacing: 0.2rem;
+}
+
+.fa-times {
+  position: absolute;
+  cursor: pointer;
+  top: 3.2%;
+  right: 3%;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 9px #ccc !important;
+}
+
+.modal-footer {
+  padding-right: 30px !important;
+  padding-top: 1.7rem !important;
+}
+
+  .btn1 {
+    padding: 0.6rem !important;
+    margin-right: 0.5rem !important;
+    font-size: 0.7rem;
+  }
+
+  .fa-times {
+    top: 3.5%;
+    right: 5%;
+    font-size: 1.5rem;
+  }
+
+  .modal-footer {
+    padding-right: 30px !important;
+    padding-top: 0.8rem !important;
+  }
+
+  .parcel-title {
+    color: var(--lightOrange);
+    font-size: 1.6rem;
+    text-align: center;
+    padding-top: 16px;
+    letter-spacing: 0.1rem;
+  }
+
+  .cancelModalStyle {
+    position: fixed;
+    top: 45%;
+    bottom: 0;
+    left: 45%;
+    right: 0;
+    width: 50%;
+    height: 18%;
+    color: var(--darkBlue);
+    background: #fff;
+    box-shadow: 2px 2px 16px #ccc !important;
+  }
+
+  .cancel-title {
+    font-size: 0.8rem;
+  }
+
+  .btn3 {
+    font-size: 0.7rem;
+  }
+
+  .btn-class {
+    margin-left: 5rem !important;
+  }
+/****homePage****/
+.banner-title{
+  padding: 0.3rem;
+}
+.banner-box{
+  margin-left:0.3rem;
+}
+.banner{
+  margin-top:0;
+  padding:0.3rem;
+}
+  .banner-box2{
+    margin-right: 0.3rem;
+  }
+  /***footer****/
+  .address{
+    font-size: 0.8rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .signWidth {
     width: 70%;
@@ -337,7 +452,27 @@
     border-radius: 10px;
     box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
   }
+
+  .info-div {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .info-div p {
+    font-size: 0.8rem;
+  }
+
+  .profileHr {
+    width: none;
+    display: none;
+  }
 }
+
+
+
+
+
+
 .labels{
   color: var(--lightOrange) !important;
   font-weight: bold;
@@ -600,20 +735,6 @@ td{
   height: 3rem;
   border: none;
   outline: none !important;
-}
-
-@media only screen and (max-width: 600px) {
-  .info-div {
-    margin-top: 2rem;
-    padding: 1rem;
-  }
-  .info-div p{
-    font-size: 0.8rem;
-  }
-  .profileHr {
-    width: none;
-    display: none;
-  }
 }
 /*********end of Modal *********/
 

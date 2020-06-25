@@ -43,7 +43,7 @@ class Dashboard extends Component {
       }
       return (
         <React.Fragment>
-          <table className="table table-hover mt-5 text-center">
+          <table className="table table-hover mt-5 w-auto text-center">
             <THead />
             {that.props.parcels.map((parcel) => (
               <React.Fragment key={parcel.parcelId}>
