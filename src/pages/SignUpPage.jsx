@@ -31,7 +31,7 @@ class SignUpPage extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { firstName, lastName, email, password, confirmPassword } = this.state;
+		const { firstName, lastName, email, password} = this.state;
 		if (!isValid(this.state)) {
 			return this.setState({ isDisabled: true });
 		}

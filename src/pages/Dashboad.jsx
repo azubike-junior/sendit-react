@@ -3,7 +3,7 @@ import THead from '../components/THead';
 import { getUserParcels } from '../actions/parcels/getParcels';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Spinner, Spinner2 } from '../components/Spinner';
+import { Spinner2 } from '../components/Spinner';
 import { closeModal, openModal, openViewModal } from '../actions/parcels/ModalAction';
 import ViewOrderModal from '../components/modals/ViewOrder';
 import Modal from 'react-modal/lib/components/Modal';

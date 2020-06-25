@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { cancelParcel } from '../../actions/parcels/cancelParcel';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ErrorHandler from '../ErrorHandler'
 
 class ViewCancelModal extends Component {
     render() {

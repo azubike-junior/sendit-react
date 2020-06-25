@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { signUpSuccess, signInSuccess} from '../actions/types';
 import logoutUser from '../actions/users/logOut';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';

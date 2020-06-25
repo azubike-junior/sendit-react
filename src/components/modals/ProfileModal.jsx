@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { closeProfileModal } from '../../actions/parcels/ModalAction'
-import { Spinner, Spinner3 } from '../Spinner';
+import { Spinner3 } from '../Spinner';
 import { UploadUserImage } from '../../actions/users/uploadImage';
 import avatar from '../../images/avatar-1.png'
 

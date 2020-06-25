@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateDestination } from '../../actions/parcels/updateDestination';
-import { openViewModal, closeViewModal } from '../../actions/parcels/ModalAction';
-import isEmpty from 'lodash.isempty';
+import { closeViewModal } from '../../actions/parcels/ModalAction';
 import ViewCancelModal from './ViewCancelModal';
-import Spinner from '../Spinner';
 import Modal from 'react-modal';
 
 class viewOrderModal extends Component {

@@ -40,7 +40,7 @@ class CreateOrderModal extends Component {
 	};
 
 	render () {
-		const { parcelName, destination, pickupLocation, parcelWeight, parcelWeightScale, errorFormat } = this.state;
+		const { parcelName, destination, pickupLocation, parcelWeight, errorFormat } = this.state;
 		return (
 			<div className='modalContainer'>
 				<Modal isOpen={this.props.isOpen} onRequestClose={this.props.closeModal} className='Random' contentLabel='Example Modal'>

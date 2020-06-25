@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar.jsx';
 import About from './pages/AboutPage.jsx';
 import Dashboard from './pages/Dashboad.jsx';
-import AdminViewOrder from './pages/admin/AdminViewOrder';
-import AdminDashboard from './pages/admin/AdminDashboard';
 import Signin from './pages/SignInPage';
 import Signup from './pages/SignUpPage';
 import { Provider } from 'react-redux';
