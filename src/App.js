@@ -1,0 +1,48 @@
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar.jsx';
+import About from './pages/AboutPage.jsx';
+import Dashboard from './pages/Dashboad.jsx';
+import AdminViewOrder from './pages/admin/AdminViewOrder';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import Signin from './pages/SignInPage';
+import Signup from './pages/SignUpPage';
+import { Provider } from 'react-redux';
+import store from './store';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.css';
+import HomePage from './pages/HomePage.jsx';
+import Footer from './components/Footer'; 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import {ProtectedRoute} from './helpers/authentication'
+import NotFound from './pages/NotFound.jsx';
+
+toast.configure({
+  autoclose: 8000,
+  draggable: false
+})
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <ToastContainer />
+          <React.Fragment>
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/about" component={About} />
+              <Route path="/signin" component={Signin} />
+              <Route path="/signup" component={Signup} />
+              <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+              <Route component={NotFound} />
+            </Switch>
+          </React.Fragment>
+          <Footer />
+        </Router>
+        </Provider>
+    );
+  }
+}
