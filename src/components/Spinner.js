@@ -38,9 +38,8 @@ export function ParcelSpinner() {
 
 export function SignInSpinner() {
     return (
-        <div className='spinner-div'>
-            <div className="spinner-border signInSpinner text-dark" role="status">
-            </div>
+        <div className='signInSpinner'>
+                <img src={spin} alt='...loading'/>
         </div>
     )
 }
@@ -49,9 +48,8 @@ export function SignInSpinner() {
 
 export function SignUpSpinner() {
     return (
-        <div className='spinner-div'>
-            <div className="spinner-border signUpSpinner text-dark" role="status">
-            </div>
+         <div className='signUpSpinner'>
+                <img src={spin} alt='...loading'/>
         </div>
     )
 }

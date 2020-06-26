@@ -41,9 +41,8 @@ class SignInPage extends Component {
         <div className="signinWrapper">
           <div className="container signWidth">
             <form onSubmit={this.handleSubmit}>
-              {this.props.errorMsg && (<span className="alert alert-danger alert-dismissible fade show">
-                <strong>{this.props.errorMsg}</strong>
-                <button type="button" className="close" data-dismiss="alert">&times;</button>
+              {this.props.errorMsg && (<span className='error'>
+                {this.props.errorMsg}
               </span>)}
               <div className="form-group">
                 <label className="labels">Email address</label>
@@ -71,13 +70,13 @@ class SignInPage extends Component {
                 {errorFormat.password && (
                   <span className="text-danger">{errorFormat.password}</span>
                 )}
+                {!this.props.isLoading && (
+                  <button type="submit" className="btn btn-primary" hidden={this.state.isDisabled}>
+                    Log in
+                  </button>
+                )}
+                {this.props.isLoading && <SignInSpinner />}
               </div>
-              {!this.props.isLoading && (
-                <button type="submit" className="btn btn-primary" hidden={this.state.isDisabled}>
-                  Log in
-                </button>
-              )}
-              {this.props.isLoading && <SignInSpinner/>}
             </form>
           </div>
         </div>

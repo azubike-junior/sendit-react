@@ -46,14 +46,9 @@ class SignUpPage extends Component {
 				<div className='signupWrapper'>
 					<div className='container signupWidth'>
 						<form onSubmit={this.handleSubmit}>
-							{this.props.errorMsg && (
-								<span className='alert alert-danger alert-dismissible fade show'>
-									<strong>{this.props.errorMsg}</strong>
-									<button type='button' className='close' data-dismiss='alert'>
-										&times;
-									</button>
-								</span>
-							)}
+							{this.props.errorMsg && (<span className='error'>
+								{this.props.errorMsg}
+							</span>)}
 							<div className='form-group'>
 								<label className='labels'>First Name</label>
 								<input
@@ -117,13 +112,14 @@ class SignUpPage extends Component {
 									id='exampleInputPassword1'
 								/>
 								{errorFormat.confirmPassword && <span className='error'>{errorFormat.confirmPassword}</span>}
+								{!this.props.isLoading && (
+									<button type='submit' className='btn btn-primary' hidden={this.state.isDisabled}>
+										create Account
+									</button>
+								)}
+								{this.props.isLoading && <SignUpSpinner />}
 							</div>
-							{!this.props.isLoading && (
-								<button type='submit' className='btn btn-primary' hidden={this.state.isDisabled}>
-									create Account
-								</button>
-							)}
-							{this.props.isLoading && <SignUpSpinner />}
+
 						</form>
 					</div>
 				</div>

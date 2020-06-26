@@ -157,13 +157,6 @@
   margin-right: 0.2rem;
   border-radius:5px;
 }
-/* 
-.li-style:hover {
-  text-decoration: none;
-  list-style: none;
-  color: var(--darkBlue);
-  text-shadow: 2px 2px 16px #ccc;
-} */
 
 /* footer */
 .footer {
@@ -346,11 +339,11 @@
   box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
 }
 
-
 @media only screen and (max-width: 480px) {
   /***signIn***/
   .alert{
-    font-size: 0.6rem !important;
+    font-size: 0.5rem !important;
+    width:1rem;
     padding:-1rem !important;
   }
   /****NotFound ****/
@@ -516,7 +509,6 @@
     padding-top: 0.5rem !important;
   }
   .signupWidth {
-    height: 100vh !important;
     width: 70% !important;
     background: var(--darkBlue);
     padding: 2rem;
@@ -842,22 +834,18 @@ td{
   width:3rem;
 }
 
-.signInSpinner{
-  font-size: 1rem;
-  position: absolute;
-  top: 48%;
-  bottom: 0;
-  left: 48%;
-  right: 0;
+.signInSpinner img{
+  height: 3rem;
+  text-align: center;
+  margin-left:3rem;
+  margin-top:0.2rem;
 }
 
-.signUpSpinner {
-  font-size: 1rem;
-  position: absolute;
-  top: 83%;
-  bottom: 0;
-  left: 48%;
-  right: 0;
+.signUpSpinner img{
+  height: 3rem;
+  text-align: center;
+   margin-left:3rem;
+   margin-top:0.2rem;
 }
 
 
