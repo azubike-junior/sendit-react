@@ -160,16 +160,15 @@
 
 /* footer */
 .footer {
-  text-align: center;
-  font-size: 0.9rem;
   background: var(--darkBlue);
-  padding-top:1px;
-  padding-bottom: 1px;
 }
 
 .footer h6 {
   color: var(--lightOrange);
   letter-spacing: 0.1rem;
+  font-size:0.9rem;
+  text-align: center;
+  padding:0.4rem;
 }
 
 /* ABOUT Page */
@@ -384,9 +383,6 @@
 }
 
 /****cancelOrder****/
-.cancelModalStyle{
-  
-}
 .Random {
   top: 20%;
   bottom: 0;
