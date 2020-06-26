@@ -304,6 +304,34 @@
   .bttn {
     margin-top: 2rem !important;
   }
+  /****about ****/
+  .img-style {
+    padding-left: 2, 5rem;
+    padding-top: 1.5rem;
+  }
+
+  .second-section {
+    height: 50%;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .img-center {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 10px;
+  }
+
+  .img-display {
+    border: none;
+  }
+
+  .img-single {
+    height: 130px;
+    width: 20rem;
+  }
 }
 
 /**** signin ******/
@@ -319,17 +347,60 @@
 }
 
 
-
-
-
 @media only screen and (max-width: 480px) {
+  /***signIn***/
+  .alert{
+    font-size: 0.6rem !important;
+    padding:-1rem !important;
+  }
+  /****NotFound ****/
+  .Notfound{
+    padding:2rem !important;
+    width:10rem !important;
+    margin-right:-1rem !important;
+  }
+  .Notfound h3{
+    font-size: 0.8rem !important;
+  }
+  .btnNotfound{
+    font-size: 0.8rem !important;
+  }
+  /***viewOrder***/
+  .thClass{
+    font-size: 0.7rem;
+  }
+  .tbClass {
+    font-size: 0.7rem;
+  }
+
+/*****profileModal*****/
+
+.upload-div img {
+  margin-left:3rem !important;
+  height: 7rem !important;
+  width: 7rem !important;
+  border: var(--lightBlue) solid 1px;
+  border-radius: 60%;
+}
+.info-div {
+  margin-top: -1.5rem !important;
+}
+
+.upload-div input{
+  padding:-2rem !important;
+}
+
+/****cancelOrder****/
+.cancelModalStyle{
+  
+}
 .Random {
   top: 20%;
   bottom: 0;
   left: 25%;
   right: 0;
-  width: 50%;
-  height: 60%;
+  width: 0.7rem;
+  height: 50%;
   border: none;
   outline: none !important;
   background-color: red;
@@ -828,6 +899,63 @@ td{
   position: absolute;
   top:30%;
   right:35%;
-
-
 }
+
+/****contact*****/
+.contact-title{
+  color: var(--darkBlue)
+}
+.contact-div{
+  background: rgb(241, 240, 240);
+  box-shadow: 2px 2px 8px rgb(195, 194, 194);
+  padding:2rem;
+  border-radius: 10px;
+}
+.login-details{
+  color:var(--lightOrange);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--darkBlue) solid 1px;
+}
+.fab{
+  font-size: 1.5rem;
+  padding:0.4rem;
+  color:var(--lightOrange);
+  background:var(--darkBlue);
+  border-radius: 10px;
+}
+.fab a{
+ text-decoration: none;
+ list-style: none;
+}
+
+.contact-title{
+  font-family: 'Quicksand',
+  sans-serif;
+}
+.fa-phone-square {
+  padding-right:1rem;
+  font-size: 1.2rem;
+}
+.icons{
+  font-size: 3rem;
+  height: 5rem;
+  color:var(--darkBlue);
+  border: 2px solid #ccc;
+  transition: 1s ease-in;
+  text-decoration: none;
+  list-style: none;
+}
+.icon-title{
+  color:var(--lightOrange);
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.1rem;
+  padding-top:1.8rem;
+}
+.icons:hover{
+  color: black;
+  border:var(--darkBlue) solid 3px;
+}
+

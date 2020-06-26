@@ -56,19 +56,19 @@ class ProfileModal extends Component {
         <React.Fragment>
           <div className="container">
             <div className="row"> 
-              <div className="col">
+              <div className="col-md-6 col-lg-4">
                 <div className="upload-div">
-                  <img src={!that.state.imageUrl ? avatar : that.state.imageUrl} alt="profile" />
+                  <img  src={!that.state.imageUrl ? avatar : that.state.imageUrl} alt="profile" />
                   <input onChange={that.handleChange} type="file" className="fileName" />
                 </div>
               </div>
               <hr className="profileHr" />
-              <div className="col">
+              <div className="col-md-6 col-lg-5">
                 <div className="info-div">
-                  <h5>Email</h5>
-                  <p>{that.props.user.email}</p>
-                  <h5>Name</h5>
-                  <p>
+                  <h5 className='text-center'>Email</h5>
+                  <p className='text-center'>{that.props.user.email}</p>
+                  <h5 className='text-center'>Name</h5>
+                  <p className='text-center'>
                     {that.props.user.firstName} {that.props.user.lastName}
                   </p>
                 </div>

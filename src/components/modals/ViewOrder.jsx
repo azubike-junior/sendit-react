@@ -58,7 +58,7 @@ class viewOrderModal extends Component {
 						onRequestClose={this.props.closeViewModal}
 						className='Random'
 						contentLabel='Example Modal'>
-						<div>
+						<div className='viewOrder'>
 							<div className='modal-top'>
 								<span onClick={this.props.closeViewModal}>
 									<i className='fa fa-times' />
@@ -67,7 +67,7 @@ class viewOrderModal extends Component {
 							</div>
 							<div>
 								<table className='table table-striped mt-5'>
-									<thead>
+									<thead className='thClass'> 
 										<tr>
 											<th scope='col'>Parcel No.</th>
 											<th scope='col'>Parcel Name</th>
@@ -75,7 +75,7 @@ class viewOrderModal extends Component {
 											<th scope='col'>Parcel status</th>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody className='tbClass'>
 										<tr>
 											<th scope='row'>{parcel.parcelId}</th>
 											<td>{parcel.parcelName}</td>
@@ -120,7 +120,7 @@ class viewOrderModal extends Component {
 							</div>
 						</div>
 					</Modal>
-				</div>
+					</div>
 			</React.Fragment>
 		);
 	}
