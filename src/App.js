@@ -38,9 +38,10 @@ export default class App extends Component {
               <Route path="/signup" component={Signup} />
               <ProtectedRoute exact path="/dashboard" component={Dashboard} />
               <Route component={NotFound} />
+              <Footer/>
             </Switch>
+
           </React.Fragment>
-          <Footer />
         </Router>
         </Provider>
     );

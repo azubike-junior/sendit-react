@@ -52,7 +52,7 @@
 
 /* homePage */
 .home{
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 75px);
   background: url('./images/homeBcg.jpg') ;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,6 +121,9 @@
   background: var(--darkBlue) !important;
   box-shadow: 2px 2px 16px #ccc !important;
 }
+.fa-bars {
+  color:#fff !important;
+}
 
 .nav-link {
   color: var(--lightOrange);
@@ -156,19 +159,6 @@
   padding: 0.0.01rem;
   margin-right: 0.2rem;
   border-radius:5px;
-}
-
-/* footer */
-.footer {
-  background: var(--darkBlue);
-  margin-top:1%;
-}
-
-.footer h6 {
-  color: var(--lightOrange);
-  letter-spacing: 0.1rem;
-  font-size:0.9rem;
-  text-align: center;
 }
 
 /* ABOUT Page */
@@ -339,12 +329,6 @@
 }
 
 @media only screen and (max-width: 480px) {
-  /**footer**/
-  .footer {
-  background: var(--darkBlue);
-  margin-top:1%;
-  font-size:0.8rem ;
-}
   /***signIn***/
   .alert{
     font-size: 0.5rem !important;
@@ -490,12 +474,10 @@
   padding:0.3rem;
 }
   .banner-box2{
+    margin-top:-4rem !important;
     margin-right: 0.3rem;
   }
   /***footer****/
-  .address{
-    font-size: 0.8rem;
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -509,13 +491,16 @@
  
   .signupWrapper {
     padding-top: 0.5rem !important;
+    height:90vh !important;
   }
   .signupWidth {
+    height:90vh !important;
     width: 70% !important;
     background: var(--darkBlue);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
+    margin-bottom: 2rem !important;
   }
 
   .info-div {
