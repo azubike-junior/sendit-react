@@ -21,7 +21,6 @@ export default class HomePage extends Component {
                         <button className='btntip '><Link to='/about'>click here for tips</Link> </button>
                     </div>
                 </div>
-                
             </div>
         )
     }

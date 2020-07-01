@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Spinner2 } from '../components/Spinner';
 import { closeModal, openModal, openViewModal } from '../actions/parcels/ModalAction';
-import ViewOrderModal from '../components/modals/ViewOrder';
 import Modal from 'react-modal/lib/components/Modal';
+import ReactPagination from '../components/ReactPaginate.jsx'
 import { getUser } from '../actions/users/getUser';
+import ViewOrderModal from '../components/modals/ViewOrder';
 Modal.setAppElement('#root');
 
 class Dashboard extends Component {
@@ -15,10 +16,32 @@ class Dashboard extends Component {
     isOpen: false,
     parcel: {},
     imageUrl: null,
+    offset: 0,
+    limit: 10,
+    pageCount:0,
+    currentPage: 0
   };
+
+  handlePageClick = (e) => {
+    console.log('======== new ')
+    const selectedPage = e.selected;
+    const offset = selectedPage * this.state.limit;
+
+    this.setState({
+      currentPage: selectedPage,
+      offset: offset
+    })
+  }
+
+  countPage = (parcels) => {
+    this.setState({
+      pageCount: Math.ceil(parcels.length / this.state.limit)
+    })
+  }
+
   componentDidMount = () => {
-    this.props.getUserParcels()
-      this.props.getUser();
+    this.props.getUserParcels(this.countPage)
+    this.props.getUser();
   };
   
   showParcels = (that) => {
@@ -45,7 +68,7 @@ class Dashboard extends Component {
         <React.Fragment>
           <table className="table table-hover mt-5 w-auto text-center">
             <THead />
-            {that.props.parcels.map((parcel) => (
+            {that.props.parcels.slice(this.state.offset, this.state.offset + this.state.limit).map((parcel) => (
               <React.Fragment key={parcel.parcelId}>
                 <tbody>
                   <tr key={parcel.parcelId}>
@@ -79,13 +102,17 @@ class Dashboard extends Component {
       <React.Fragment>
         <div className="container classElement"> 
           <h2 className=" text-center text-capitalize mt-5 dashboard-title"> Your Dashboard</h2>
+          
           {this.showParcels(this)}
         </div>
+        <ReactPagination
+          handlePageClick={this.handlePageClick}
+          pageCount={this.state.pageCount}
+        />
       </React.Fragment>
     );
   }
 }
-
 const mapStateToProps = ({ parcels, users }) => ({
   parcels: parcels.parcels,
   parcel: parcels.parcel,

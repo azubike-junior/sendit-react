@@ -16,7 +16,7 @@ import {
 } from '../changeState';
 import ViewOrder from '../../components/modals/ViewOrder';
 
-const getUserParcels = () => dispatch => {
+const getUserParcels = (countPage) => dispatch => {
     dispatch({
         type: isLoading
     })
@@ -25,8 +25,9 @@ const getUserParcels = () => dispatch => {
             headers: {
                 Authorization: token
             },
-        })
+    })
         .then(resp => {
+            countPage(resp.data.data)
             dispatch(changeSignInState(signInSuccess))
             dispatch({
                 type: GET_USER_PARCELS,
