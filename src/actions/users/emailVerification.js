@@ -4,10 +4,12 @@ import { baseUrl } from '../../helpers/constants';
 import { changeSignInState } from '../changeState';
 
 export const emailVerifier = (id, history) => dispatch => {
+    console.log('=====it got here')
     dispatch({
         type: isLoading
     })
-    return Axios.get(`${baseUrl}/user/verification/${id}`)
+    const token = window.localStorage.getItem(`${id}`)
+    return Axios.get(`${baseUrl}/user/verification/${token}`)
         .then(resp => {
         window.localStorage.setItem('token',`${
             id
