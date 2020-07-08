@@ -42,7 +42,7 @@ class SignUpPage extends Component {
 	render () {
 		const { errorFormat, firstName, lastName, email, password, confirmPassword } = this.state;
 		return (
-			<div className='home'>
+			<div className=''>
 				<div className='signupWrapper'>
 					<div className='container signupWidth'>
 						<form onSubmit={this.handleSubmit}>

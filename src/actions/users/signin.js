@@ -18,7 +18,7 @@ const signUserIn = (user, history) => dispatch => {
     dispatch({
         type: isLoading
     })
-    return axios.post(`${baseUrl}/signin`, {
+    return axios.post(`${baseUrl}/user/signin`, {
         email,
         password
     }).then(resp => {

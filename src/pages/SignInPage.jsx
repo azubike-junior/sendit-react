@@ -27,17 +27,18 @@ class SignInPage extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		const { email, password } = this.state;
-		if (!isValid(this.state)) {
+		if (email === '') {
 			return this.setState({ isDisabled: true });
 		}
 		this.props.signInUser({ email, password }, this.props.history);
 	};
 
 	render () {
-		const { errorFormat, email, password } = this.state;
+		const {email, password } = this.state;
 		return (
-			<div className='home'>
+			<div className=''>
 				<div className='signinWrapper'>
+					<span>{this.props.verificationMsg}</span>
 					<div className='container signWidth'>
 						<form onSubmit={this.handleSubmit}>
 							{this.props.errorMsg && <span className='error'>{this.props.errorMsg}</span>}
@@ -52,7 +53,6 @@ class SignInPage extends Component {
 									name='email'
 									onChange={this.handleChange}
 								/>
-								{errorFormat.email && <span className='text-danger'>{errorFormat.email}</span>}
 							</div>
 							<div className='form-group'>
 								<label className='labels'>Password</label>
@@ -63,8 +63,8 @@ class SignInPage extends Component {
 									name='password'
 									value={password}
 									onChange={this.handleChange}
+									required={true}
 								/>
-								{errorFormat.password && <span className='text-danger'>{errorFormat.password}</span>}
 								{!this.props.isLoading && (
 									<button type='submit' className='btn btn-primary' hidden={this.state.isDisabled}>
 										Log in
@@ -82,7 +82,8 @@ class SignInPage extends Component {
 
 const mapStateToProps = ({ users }) => ({
 	isLoading: users.isLoading,
-	errorMsg: users.errorMsg
+	errorMsg: users.errorMsg,
+	verificationMsg: users.signUpMsg
 });
 
 export default connect(mapStateToProps, { signInUser })(withRouter(SignInPage));

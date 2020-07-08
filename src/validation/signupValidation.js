@@ -1,6 +1,7 @@
 /* eslint-disable no-fallthrough */
 import {
-    emailRegex
+    emailRegex,
+    passwordRegex
 } from '../helpers/constants'
 
 export const validateSignup = (e, state) => {
@@ -28,7 +29,7 @@ export const validateSignup = (e, state) => {
              break;
         case 'password':
             errorFormat.password =
-                value.length < 8 ? 'password is too weak' : '';
+                !passwordRegex.test(value) ? 'Password must be atleast 6 chars with atleast 1 uppercase, 1 number, & 1 special char' : '';
              break;
         case 'confirmPassword':
             errorFormat.confirmPassword =

@@ -4,19 +4,20 @@ import {
     signInFailure,
     signUpFailure,
     signUpSuccess,
-    signUpUser,
     isLoggedOut,
     isLoading,
     GET_USER,
     UPLOAD_IMAGE,
     isLoadingImg,
-    isDisabled
+    isDisabled,
+    EMAIL_VERIFIER
 } from '../actions/types';
 
 const initState = {
     user: {},
     errorMsg: '',
-    signupErrorMsg:'',
+    verfifiedMsg:'',
+    signUpMsg:'',
     signInStatus: '',
     signUpStatus: '',
     role: '',
@@ -27,18 +28,6 @@ const initState = {
 
 const userReducer = (state = initState, action) => {
     switch (action.type) {
-        case signUpUser:
-            return {
-                ...state,
-                signUpStatus: signUpSuccess,
-                    error: ''
-            }
-        case signInUser:
-            return {
-                ...state,
-                isLoading: false,
-                signInStatus: signInSuccess
-            }
         case signUpFailure:
             return {
                 ...state,
@@ -67,9 +56,15 @@ const userReducer = (state = initState, action) => {
                 return {
                     ...state,
                         signUpStatus: signUpSuccess,
+                        signUpMsg:action.payload,
                         user: action.user,
                         role: action.role,
                         isLoading: false
+            }
+        case EMAIL_VERIFIER:
+            return {
+                ...state,
+                verifiedMsg: action.payload
             }
         case GET_USER:
             return {

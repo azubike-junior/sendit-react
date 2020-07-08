@@ -8,7 +8,6 @@ import {
 import {
     changeSignUpState
 } from '../changeState'
-import { toast } from 'react-toastify';
 
 const registerUser = (user, history) => dispatch => {
     const {
@@ -20,19 +19,21 @@ const registerUser = (user, history) => dispatch => {
     dispatch({
         type: isLoading
     })
-    return axios.post(`${baseUrl}/signup`, {
+    return axios.post(`${baseUrl}/user/signup`, {
         firstName,
         lastName,
         email,
         password
     }).then(resp => {
+        console.log('======= it got here')
+        console.log('=======response', resp)
         window.localStorage.setItem('token', `${resp.data.data}`)
-        dispatch(changeSignUpState(signUpSuccess))
-        history.push('/dashboard')
-        toast('welcome to sendIT', {
-            position: toast.POSITION.TOP_RIGHT,
-            className: 'uploadToast'
+        dispatch(changeSignUpState(signUpSuccess));
+        dispatch({
+            type: signUpSuccess,
+            payload: resp.data.message
         })
+        history.push('/signin')
     }).catch(e => {
         console.log(e)
         dispatch(changeSignUpState(signUpFailure, null, null, e.response.data.message))
