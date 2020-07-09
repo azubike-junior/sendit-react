@@ -35,7 +35,7 @@ export default class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={ContactPage} />
-              <Route path="/verification/:id" component={ConfirmPage} />
+              <Route path="/user/verify/:token" component={ConfirmPage} />
               <Route path="/signin" component={Signin} />
               <Route path="/signup" component={Signup} />
               <ProtectedRoute exact path="/dashboard" component={Dashboard} />

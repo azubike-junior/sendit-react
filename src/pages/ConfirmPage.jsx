@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { emailVerifier } from '../actions/users/emailVerification'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { Spinner2 } from '../components/Spinner';
 
 class ConfirmPage extends Component {
 
     componentDidMount = () => {
-        const { id } = this.props.match.params;
-        console.log(this.props)
-        this.props.emailVerifier(id)
+        const { token } = this.props.match.params
+        this.props.emailVerifier(token, this.props.history)
     }
 
     render() {
@@ -17,14 +16,15 @@ class ConfirmPage extends Component {
             
             <div className='container'>
                 <span>{this.props.verifiedMsg}</span>
-                { this.props.isLoading ? <Spinner2 /> : <button className='btn'> you can now signin </button>}
+                {this.props.isLoading ? <Spinner2 /> : <Link to='/dashboard'>
+                <Spinner2/>
+                </Link>}
             </div>
         );
     }
 }
 
 const mapStateToProps = ({ users }) => ({
-    isLoading: users.isLoading,
-    verifiedMsg: users.verifiedMsg
+    isLoading: users.isLoading
 });
-export default connect(mapStateToProps, { emailVerifier })(withRouter(ConfirmPage)) ;
+export default connect(mapStateToProps, {emailVerifier})(withRouter(ConfirmPage)) ;
