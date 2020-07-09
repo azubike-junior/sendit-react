@@ -1,4 +1,4 @@
-import { EMAIL_VERIFIER, isLoading, signInSuccess, signInFailure } from '../types';
+import { isLoading, signInSuccess, signInFailure } from '../types';
 import Axios from 'axios';
 import { changeSignInState } from '../changeState';
 import { baseUrl } from '../../helpers/constants';

@@ -1,5 +1,4 @@
 import {
-    signInUser,
     signInSuccess,
     signInFailure,
     signUpFailure,
