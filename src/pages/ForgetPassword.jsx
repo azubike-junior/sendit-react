@@ -37,8 +37,8 @@ class ForgetPassword extends Component {
                     <div className="row">
                         <div className="col-md-7">
                             <div className='reset-wrapper'>
-                                {this.props.resetError && (<div className="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <span>{this.props.resetError}</span>
+                                {this.props.forgetError && (<div className="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <span>{this.props.forgetError}</span>
                                     <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -102,7 +102,7 @@ class ForgetPassword extends Component {
 const mapStateToProps = ({ users }) => ({
     isLoading: users.isLoading,
     resetMsg: users.passwordMsg,
-    resetError: users.errorMsg
+    forgetError: users.forgetError
 })
 
 export default connect(mapStateToProps, {resetPasswordRequest})(withRouter(ForgetPassword));
