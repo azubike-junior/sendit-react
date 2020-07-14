@@ -9,13 +9,15 @@ import {
     UPLOAD_IMAGE,
     isLoadingImg,
     isDisabled,
-    EMAIL_VERIFIER
+    PASSWORD_RESET
 } from '../actions/types';
 
 const initState = {
     user: {},
+    resetError: '',
+    resetMsg:'',
     errorMsg: '',
-    verfifiedMsg:'',
+    passwordMsg:'',
     signUpMsg:'',
     signInStatus: '',
     signUpStatus: '',
@@ -32,7 +34,7 @@ const userReducer = (state = initState, action) => {
                 ...state,
                     signUpStatus: signUpFailure,
                     signupErrorMsg: action.errorMsg, 
-                     users: '',
+                    users: '',
                     role: false ,
                     isLoading: false
             }
@@ -60,10 +62,15 @@ const userReducer = (state = initState, action) => {
                         role: action.role,
                         isLoading: false
             }
-        case EMAIL_VERIFIER:
+        case PASSWORD_RESET:
+            console.log('===reset', action.passwordError)
             return {
                 ...state,
-                verifiedMsg: action.payload
+                passwordMsg:action.payload,
+                errorMsg: action.passwordError,
+                resetError: action.passwordError,
+                resetMsg:action.payload,
+                isLoading: false
             }
         case GET_USER:
             return {

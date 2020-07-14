@@ -327,24 +327,47 @@ footer {
 }
 
 /**** signin ******/
-.signinWrapper{
-  padding-top: 3rem;
+.signinContainer{
+  background:rgb(246, 245, 245);
+  width:100%;
+  height:100vh;
 }
-.signWidth{
-  width:30%;
-  background: var(--darkBlue);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
+.signinWrapper{
+  margin:2rem;
+  padding-top: 3rem;
+  background: rgb(251, 251, 251);
+  height:70vh;
+  box-shadow: 2px 2px 16px #ccc !important;
+}
+.signin-title{
+  color: rgb(44, 42, 42);
+  font-family: 'Lobster',
+  cursive;
+}
+.signin-info{
+  margin:5rem;
+}
+/**** signup ******/
+.signupContainer {
+  background: rgb(246, 245, 245);
+  width: 100%;
+  height: 120vh;
+}
+.signupWrapper {
+  margin: 2rem;
+  padding-top: 3rem;
+  background: rgb(251, 251, 251);
+  height: 110vh;
+  box-shadow: 2px 2px 16px #ccc !important;
+}
+
+.forget{
+  font-size:0.7rem;
+  margin-top: 0.5rem;
+  color: var(--lightOrange)
 }
 
 @media only screen and (max-width: 480px) {
-  /***signIn***/
-  .alert{
-    font-size: 0.5rem !important;
-    width:1rem;
-    padding:-1rem !important;
-  }
   /****NotFound ****/
   .Notfound{
     padding:2rem !important;
@@ -490,28 +513,6 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  .signWidth {
-    width: 70%;
-    background: var(--darkBlue);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
-  }
- 
-  .signupWrapper {
-    padding-top: 0.5rem !important;
-    height:90vh !important;
-  }
-  .signupWidth {
-    height:90vh !important;
-    width: 70% !important;
-    background: var(--darkBlue);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
-    margin-bottom: 2rem !important;
-  }
-
   .info-div {
     margin-top: 2rem;
     padding: 1rem;
@@ -528,32 +529,11 @@ footer {
 }
 
 
-
-
-
-
 .labels{
   color: var(--lightOrange) !important;
   font-weight: bold;
 }
 
-/**** signup******/
-.alert{
- margin-top: -5rem !important;
- height:0.5rem;
-}
-.signupWrapper {
-  padding-top: 0.5rem;
-  height: 5vh;
-}
-.signupWidth {
-  height: 34rem !important;
-  width: 30%;
-  background: var(--darkBlue);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 16px rgb(27, 26, 26) !important;
-}
 /********** errorMessages ******/
 .error {
   color: red;
@@ -829,19 +809,15 @@ td{
 .spinner3 img {
   width:3rem;
 }
+.spinner4 img{
+  width:3rem;
+}
 
 .signInSpinner img{
   height: 3rem;
   text-align: center;
   margin-left:3rem;
   margin-top:0.2rem;
-}
-
-.signUpSpinner img{
-  height: 3rem;
-  text-align: center;
-   margin-left:3rem;
-   margin-top:0.2rem;
 }
 
 
@@ -986,4 +962,58 @@ td{
 .pagination>li:last-child>a,
 .pagination>li:last-child>span {
   border-radius: unset
+}
+
+/***********resetPassword ***********/
+.reset-container{
+     background: rgb(246, 245, 245);
+     width: 100%;
+     height: 100vh;
+}
+.reset-wrapper{
+margin: 3rem;
+ padding-top: 2rem;
+ background: rgb(251, 251, 251);
+ height: 65vh;
+ box-shadow: 2px 2px 16px #ccc !important;
+}
+.reset-wrapper2 {
+  margin: 3rem;
+  padding-top: 2rem;
+  background: rgb(251, 251, 251);
+  height: 70vh;
+  box-shadow: 2px 2px 16px #ccc !important;
+}
+.reset-title{
+  text-align: center;
+  padding-top:2rem;
+  margin-top:1rem;
+  color:#8a8888;
+   font-family: 'Lobster',
+   cursive;
+   font-size:2.5rem;
+}
+.reset-subtitle{
+  font-size: 1rem;
+  padding-top:1rem;
+  color:#c2bfbf
+}
+.labelss{
+  font-size: 0.9rem;
+  color:#8a8888;
+  margin-top:0.7rem;
+  padding:0.2rem
+}
+.reset-info{
+  margin-top:10rem;
+  color:#8a8888;
+  font-size: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .resetBorder {
+    width: 30%;
+    background: #ffffff;
+    box-shadow: 2px 2px 8px rgb(195, 194, 194);
+    margin-top: 2rem;
+  }
 }

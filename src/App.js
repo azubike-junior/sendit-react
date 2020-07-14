@@ -17,6 +17,8 @@ import {ProtectedRoute} from './helpers/authentication'
 import NotFound from './pages/NotFound.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import ConfirmPage from './pages/ConfirmPage.jsx';
+import ForgetPassword from './pages/ForgetPassword.jsx';
+import ResetPassword from './pages/ResetPassword.jsx';
 
 toast.configure({
   autoclose: 8000,
@@ -38,6 +40,8 @@ export default class App extends Component {
               <Route path="/user/verify/:token" component={ConfirmPage} />
               <Route path="/signin" component={Signin} />
               <Route path="/signup" component={Signup} />
+              <Route path="/forget_Password" component={ForgetPassword}/>
+              <Route path="/user/reset_Password/:token" component={ResetPassword}/>
               <ProtectedRoute exact path="/dashboard" component={Dashboard} />
               <Route component={NotFound} />
               <Footer/>

@@ -34,6 +34,7 @@ const getUserParcels = (countPage) => dispatch => {
                 payload: resp.data.data
             })
         }).catch(e => {
+            console.log(e)
             if (e.response.status === 404) {
                 dispatch(changeSignInState(signInSuccess))
                return dispatch({

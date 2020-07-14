@@ -27,7 +27,6 @@ const registerUser = (user, history) => dispatch => {
     }).then(resp => {
         console.log('======= it got here')
         console.log('=======response', resp)
-        window.localStorage.setItem('token', `${resp.data.data}`)
         dispatch(changeSignUpState(signUpSuccess));
         dispatch({
             type: signUpSuccess,

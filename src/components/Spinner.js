@@ -18,6 +18,13 @@ export function Spinner3() {
     )
 }
 
+export function Spinner4() {
+    return (
+        <div className='spinner4'>
+                <img src={spin} alt='...loading'/>
+        </div>
+    )
+}
 
 
 export function Spinner2() {

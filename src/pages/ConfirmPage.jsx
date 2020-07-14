@@ -15,10 +15,8 @@ class ConfirmPage extends Component {
         return (
             
             <div className='container'>
-                <span>{this.props.verifiedMsg}</span>
-                {this.props.isLoading ? <Spinner2 /> : <Link to='/dashboard'>
-                <Spinner2/>
-                </Link>}
+                {this.props.isLoading ? <Spinner2 /> :
+                   <Link >welcome to sendIt</Link>}
             </div>
         );
     }
