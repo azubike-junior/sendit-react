@@ -16,7 +16,7 @@ import {
 } from '../changeState';
 import ViewOrder from '../../components/modals/ViewOrder';
 
-const getUserParcels = () => dispatch => {
+const getUserParcels = (countPage) => dispatch => {
     dispatch({
         type: isLoading
     })
@@ -27,12 +27,20 @@ const getUserParcels = () => dispatch => {
             },
     })
         .then(resp => {
+            dispatch(changeSignInState(signInSuccess))
             dispatch({
                 type: GET_USER_PARCELS,
                 payload: resp.data.data
             })
         }).catch(e => {
             console.log(e)
+            if (e.response.status === 404) {
+                dispatch(changeSignInState(signInSuccess))
+               return dispatch({
+                    type: GET_USER_PARCELS,
+                    payload: []
+                })
+            }
             dispatch({
                 type: GET_PARCEL_FAILURE,
                 errorType: e.response.message
