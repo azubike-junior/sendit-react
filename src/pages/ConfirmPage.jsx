@@ -16,7 +16,7 @@ class ConfirmPage extends Component {
             
             <div className='container'>
                 {this.props.isLoading ? <Spinner2 /> :
-                   <Link to='/dashboard'><Spinner2/></Link>}
+                   <h4 className='text-center Notfound'>this email link has expired due to the time frame, please sign in</h4> }
             </div>
         );
     }
