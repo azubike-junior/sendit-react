@@ -2,7 +2,6 @@ import axios from 'axios';
 import { baseUrl } from '../../helpers/constants'
 import { toast } from 'react-toastify';
 import {
-    signInSuccess,
     signInFailure,
     isLoading
 } from '../types';
@@ -18,14 +17,15 @@ const signUserIn = (user, history) => dispatch => {
     dispatch({
         type: isLoading
     })
+    console.log('========yeaaaaah', user)
     return axios.post(`${baseUrl}/user/signin`, {
         email,
         password
     }).then(resp => {
+        console.log(resp)
         window.localStorage.setItem('token', `${
             resp.data.data
             }`)
-        dispatch(changeSignInState(signInSuccess))
         history.push("/dashboard")
         toast('welcome to sendIT', {
         position: toast.POSITION.TOP_RIGHT,

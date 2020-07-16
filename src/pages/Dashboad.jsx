@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import { Spinner2 } from '../components/Spinner';
 import { closeModal, openModal, openViewModal } from '../actions/parcels/ModalAction';
 import Modal from 'react-modal/lib/components/Modal';
-import ReactPagination from '../components/ReactPaginate.jsx'
 import { getUser } from '../actions/users/getUser';
 import ViewOrderModal from '../components/modals/ViewOrder';
 Modal.setAppElement('#root');
