@@ -15,28 +15,7 @@ class Dashboard extends Component {
     isOpen: false,
     parcel: {},
     imageUrl: null,
-    offset: 0,
-    limit: 10,
-    pageCount:0,
-    currentPage: 0
   };
-
-  // handlePageClick = (e) => {
-  //   console.log('======== new ')
-  //   const selectedPage = e.selected;
-  //   const offset = selectedPage * this.state.limit;
-
-  //   this.setState({
-  //     currentPage: selectedPage,
-  //     offset: offset
-  //   })
-  // }
-
-  countPage = (parcels) => {
-    this.setState({
-      pageCount: Math.ceil(parcels.length / this.state.limit)
-    })
-  }
 
   componentDidMount = () => {
     this.props.getUserParcels()
@@ -104,10 +83,6 @@ class Dashboard extends Component {
           
           {this.showParcels(this)}
         </div>
-        {/* <ReactPagination
-          handlePageClick={this.handlePageClick}
-          pageCount={this.state.pageCount}
-        /> */}
       </React.Fragment>
     );
   }
