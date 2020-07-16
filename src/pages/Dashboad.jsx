@@ -22,16 +22,16 @@ class Dashboard extends Component {
     currentPage: 0
   };
 
-  handlePageClick = (e) => {
-    console.log('======== new ')
-    const selectedPage = e.selected;
-    const offset = selectedPage * this.state.limit;
+  // handlePageClick = (e) => {
+  //   console.log('======== new ')
+  //   const selectedPage = e.selected;
+  //   const offset = selectedPage * this.state.limit;
 
-    this.setState({
-      currentPage: selectedPage,
-      offset: offset
-    })
-  }
+  //   this.setState({
+  //     currentPage: selectedPage,
+  //     offset: offset
+  //   })
+  // }
 
   countPage = (parcels) => {
     this.setState({
@@ -40,7 +40,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getUserParcels(this.countPage)
+    this.props.getUserParcels()
     this.props.getUser();
   };
   
@@ -68,7 +68,7 @@ class Dashboard extends Component {
         <React.Fragment>
           <table className="table table-hover mt-5 w-auto text-center">
             <THead />
-            {that.props.parcels.slice(this.state.offset, this.state.offset + this.state.limit).map((parcel) => (
+            {that.props.parcels.map((parcel) => (
               <React.Fragment key={parcel.parcelId}>
                 <tbody>
                   <tr key={parcel.parcelId}>
@@ -105,10 +105,10 @@ class Dashboard extends Component {
           
           {this.showParcels(this)}
         </div>
-        <ReactPagination
+        {/* <ReactPagination
           handlePageClick={this.handlePageClick}
           pageCount={this.state.pageCount}
-        />
+        /> */}
       </React.Fragment>
     );
   }
