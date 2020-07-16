@@ -34,13 +34,6 @@ const getUserParcels = () => dispatch => {
             })
         }).catch(e => {
             console.log(e)
-            if (e.response.status === 404) {
-                dispatch(changeSignInState(signInSuccess))
-               return dispatch({
-                    type: GET_USER_PARCELS,
-                    payload: []
-                })
-            }
             dispatch({
                 type: GET_PARCEL_FAILURE,
                 errorType: e.response.message

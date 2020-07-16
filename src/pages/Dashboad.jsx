@@ -14,7 +14,7 @@ class Dashboard extends Component {
   state = {
     isOpen: false,
     parcel: {},
-    imageUrl: null,
+    imageUrl: null
   };
 
   componentDidMount = () => {
@@ -41,12 +41,13 @@ class Dashboard extends Component {
             </div>
           </React.Fragment>
         );
-      }
+    }
       return (
         <React.Fragment>
           <table className="table table-hover mt-5 w-auto text-center">
             <THead />
-            {that.props.parcels.map((parcel) => (
+            {console.log('======that', that.props.parcels)}
+            {that.props.parcels.userParcels.map((parcel) => (
               <React.Fragment key={parcel.parcelId}>
                 <tbody>
                   <tr key={parcel.parcelId}>
@@ -61,10 +62,10 @@ class Dashboard extends Component {
                     {parcel.parcelStatus === 'DELIVERED' || parcel.parcelStatus === 'CANCELLED' ? (
                       ''
                     ) : (
-                      <td onClick={() => that.props.openViewModal(parcel)}>
-                        <i className="fas fa-edit"></i>
-                      </td>
-                    )}
+                        <td onClick={() => that.props.openViewModal(parcel)}>
+                          <i className="fas fa-edit"></i>
+                        </td>
+                      )}
                   </tr>
                 </tbody>
               </React.Fragment>
@@ -80,7 +81,6 @@ class Dashboard extends Component {
       <React.Fragment>
         <div className="container classElement"> 
           <h2 className=" text-center text-capitalize mt-5 dashboard-title"> Your Dashboard</h2>
-          
           {this.showParcels(this)}
         </div>
       </React.Fragment>

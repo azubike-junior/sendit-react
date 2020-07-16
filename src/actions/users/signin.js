@@ -17,12 +17,10 @@ const signUserIn = (user, history) => dispatch => {
     dispatch({
         type: isLoading
     })
-    console.log('========yeaaaaah', user)
     return axios.post(`${baseUrl}/user/signin`, {
         email,
         password
     }).then(resp => {
-        console.log(resp)
         window.localStorage.setItem('token', `${
             resp.data.data
             }`)
@@ -32,7 +30,6 @@ const signUserIn = (user, history) => dispatch => {
         className: 'uploadToast'
       })
     }).catch(e => {
-        console.log(e.response)
         dispatch(changeSignInState(signInFailure, null, null, e.response.data.message))
     })
 }
