@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { emailVerifier } from '../actions/users/emailVerification'
 import { connect } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import { Spinner2 } from '../components/Spinner';
 
 class ConfirmPage extends Component {
