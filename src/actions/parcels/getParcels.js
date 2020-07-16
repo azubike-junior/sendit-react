@@ -25,7 +25,7 @@ const getUserParcels = (countPage) => dispatch => {
             headers: {
                 Authorization: token
             },
-    })
+        })
         .then(resp => {
             dispatch(changeSignInState(signInSuccess))
             dispatch({
@@ -36,7 +36,7 @@ const getUserParcels = (countPage) => dispatch => {
             console.log(e)
             if (e.response.status === 404) {
                 dispatch(changeSignInState(signInSuccess))
-               return dispatch({
+                return dispatch({
                     type: GET_USER_PARCELS,
                     payload: []
                 })
