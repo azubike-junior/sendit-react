@@ -80,6 +80,7 @@ const parcelReducers = (state = initState, action) => {
                parcelError: action.errorType
            }
        case CREATE_PARCEL:
+           console.log('=====action', state.parcels)
             return {
                 ...state,
                 parcel: action.payload,

@@ -27,7 +27,6 @@ const getUserParcels = () => dispatch => {
             },
     })
         .then(resp => {
-            dispatch(changeSignInState(signInSuccess))
             dispatch({
                 type: GET_USER_PARCELS,
                 payload: resp.data.data
